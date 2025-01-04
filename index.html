@@ -13,23 +13,31 @@
     />
   </head>
   <body
-    class="w-full h-screen p-2 selection:bg-indigo-500 selection:text-white dark:bg-[#12091b]"
+    class="w-full h-screen p-4 selection:bg-indigo-500 selection:text-white dark:bg-[#12091b]"
   >
     <main class="grid gap-5">
       <div class="flex gap-2 justify-center items-center">
-        <label for="file-input" class="primary-btn">Select Video</label>
+        <label title="Select a video" for="file-input" class="primary-btn"
+          >Select Video</label
+        >
         <input type="file" hidden id="file-input" accept="video/mp4" />
-        <label for="subtitle-input" class="secondary-btn">Add Subtitiles</label>
+        <label
+          for="subtitle-input"
+          class="secondary-btn"
+          title="Select subtitle"
+          >Add Subtitiles</label
+        >
         <input hidden type="file" id="subtitle-input" accept=".srt" />
       </div>
       <div class="video-container w-[90%] h-[85vh] mx-auto">
-        <div class="rounded-md border h-full border-gray-700 relative">
+        <div class="rounded-md border shadow-sm relative dark:border-gray-700">
           <div
             id="no-video-selected"
             class="grid place-content-center absolute inset-0 z-10"
           >
             <label
               for="file-input"
+              title="Select a video"
               class="h-full cursor-pointer duration-300 transition-opacity hover:opacity-90"
             >
               <svg
@@ -46,12 +54,12 @@
                   d="M16 4C16.5523 4 17 4.44772 17 5V9.2L22.2133 5.55071C22.4395 5.39235 22.7513 5.44737 22.9096 5.6736C22.9684 5.75764 23 5.85774 23 5.96033V18.0397C23 18.3158 22.7761 18.5397 22.5 18.5397C22.3974 18.5397 22.2973 18.5081 22.2133 18.4493L17 14.8V19C17 19.5523 16.5523 20 16 20H2C1.44772 20 1 19.5523 1 19V5C1 4.44772 1.44772 4 2 4H16ZM9 8L5 12H8V16H10V12H13L9 8Z"
                 ></path>
               </svg>
-              <h1 class="text-xl font-light text-indigo-200">
+              <h1 class="text-xl font-light dark:text-indigo-200">
                 Upload a video to start watching
               </h1>
             </label>
           </div>
-          <video id="video" class="w-full h-full" style="display: hidden">
+          <video id="video" class="w-full" style="display: hidden">
             <source type="video/mp4" />
             <track
               srclang="en"
