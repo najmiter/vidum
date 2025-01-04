@@ -38,9 +38,9 @@ subtitleInput?.addEventListener('change', async () => {
     return;
   }
   try {
-    const textTrackUrl = await toWebVTT(file); // this function accepts a parameer of SRT subtitle blob/file object
-    captionTrack.src = textTrackUrl; // Set the converted URL to track's source
-    video.textTracks[0].mode = 'showing'; // Start showing subtitle to your track
+    const textTrackUrl = await toWebVTT(file);
+    captionTrack.src = textTrackUrl;
+    video.textTracks[0].mode = 'showing';
   } catch (e: any) {
     console.error(e.message);
   }
