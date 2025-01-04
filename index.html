@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>vidum - Online Free Video Player</title>
+    <link rel="icon" type="image/x-icon" href="/icon.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body
+    class="w-full h-screen p-2 selection:bg-indigo-500 selection:text-white dark:bg-[#12091b]"
+  >
+    <main class="grid gap-5">
+      <div class="flex gap-2 justify-center items-center">
+        <label for="file-input" class="primary-btn">Select Video</label>
+        <input type="file" hidden id="file-input" accept="video/mp4" />
+        <label for="subtitle-input" class="secondary-btn">Add Subtitiles</label>
+        <input hidden type="file" id="subtitle-input" accept=".srt" />
+      </div>
+      <div class="video-container w-[90%] h-[85vh] mx-auto">
+        <div class="rounded-md border h-full border-gray-700 relative">
+          <div
+            id="no-video-selected"
+            class="grid place-content-center absolute inset-0 z-10"
+          >
+            <label
+              for="file-input"
+              class="h-full cursor-pointer duration-300 transition-opacity hover:opacity-90"
+            >
+              <svg
+                class="block mx-auto"
+                stroke="currentColor"
+                fill="currentColor"
+                stroke-width="0"
+                viewBox="0 0 24 24"
+                height="200px"
+                width="200px"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M16 4C16.5523 4 17 4.44772 17 5V9.2L22.2133 5.55071C22.4395 5.39235 22.7513 5.44737 22.9096 5.6736C22.9684 5.75764 23 5.85774 23 5.96033V18.0397C23 18.3158 22.7761 18.5397 22.5 18.5397C22.3974 18.5397 22.2973 18.5081 22.2133 18.4493L17 14.8V19C17 19.5523 16.5523 20 16 20H2C1.44772 20 1 19.5523 1 19V5C1 4.44772 1.44772 4 2 4H16ZM9 8L5 12H8V16H10V12H13L9 8Z"
+                ></path>
+              </svg>
+              <h1 class="text-xl font-light text-indigo-200">
+                Upload a video to start watching
+              </h1>
+            </label>
+          </div>
+          <video id="video" class="w-full h-full" style="display: hidden">
+            <source type="video/mp4" />
+            <track
+              srclang="en"
+              label="English"
+              kind="subtitles"
+              id="caption-track"
+            />
+          </video>
+        </div>
+      </div>
+      <script type="module" src="src/main.ts"></script>
+    </main>
+  </body>
+</html>

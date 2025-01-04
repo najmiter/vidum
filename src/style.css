@@ -1,0 +1,39 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .btn {
+    @apply py-1.5 px-3 rounded-md cursor-pointer text-sm transition-all text-white duration-300;
+  }
+
+  .primary-btn {
+    @apply bg-indigo-500 btn hover:bg-indigo-500/90;
+  }
+
+  .secondary-btn {
+    @apply bg-orange-500 btn hover:bg-orange-500/90;
+  }
+}
+
+html {
+  color-scheme: light dark;
+}
+
+body {
+  font-family: "Plus Jakarta Sans", system-ui, sans-serif;
+  background-color: #f0f0f0;
+}
+
+video {
+  width: 100%;
+  display: block;
+}
+
+video::cue {
+  color: white;
+  font-size: 26px;
+  text-shadow: 0px 0px 5px black;
+  font-family: monospace;
+  padding: 4px;
+}
