@@ -28,6 +28,9 @@
           >Add Subtitiles</label
         >
         <input hidden type="file" id="subtitle-input" accept=".srt" />
+        <button id="caption-toggle" class="secondary-btn" disabled>
+          Toggle Captions
+        </button>
       </div>
       <div class="video-container w-[90%] h-[85vh] mx-auto">
         <div class="rounded-md border shadow-sm relative dark:border-gray-700">
@@ -68,6 +71,7 @@
               id="caption-track"
             />
           </video>
+          <div id="custom-captions" class="custom-captions-container"></div>
         </div>
       </div>
       <script type="module" src="src/main.ts"></script>

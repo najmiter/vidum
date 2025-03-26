@@ -30,10 +30,37 @@ video {
   display: block;
 }
 
+/* Hide default captions since we're using custom ones */
 video::cue {
+  display: none;
+}
+
+.custom-captions-container {
+  position: absolute;
+  bottom: 70px;
+  /* Position above video controls */
+  left: 0;
+  right: 0;
+  text-align: center;
+  z-index: 10;
+  pointer-events: none;
+  /* Allow clicks to pass through */
+  transition: opacity 0.3s ease;
+}
+
+.custom-captions-text {
+  display: inline-block;
   color: white;
   font-size: 26px;
-  text-shadow: 0px 0px 5px black;
-  font-family: monospace;
-  padding: 4px;
+  text-shadow: 0 2px 5px rgba(0, 0, 0, 0.8);
+  font-family: 'Plus Jakarta Sans', monospace;
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 8px 16px;
+  border-radius: 4px;
+  max-width: 80%;
+  margin: 0 auto;
+}
+
+.captions-hidden {
+  opacity: 0;
 }
