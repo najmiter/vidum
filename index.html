@@ -20,7 +20,7 @@
         <label title="Select a video" for="file-input" class="primary-btn"
           >Select Video</label
         >
-        <input type="file" hidden id="file-input" accept="video/mp4" />
+        <input type="file" hidden id="file-input" accept=".mp4, .mkv" />
         <label
           for="subtitle-input"
           class="secondary-btn"
@@ -31,10 +31,16 @@
         <button id="caption-toggle" class="secondary-btn" disabled>
           Toggle Captions
         </button>
+        <div id="track-selector-container" class="hidden">
+          <select id="track-selector" class="track-selector">
+            <option value="none">No subtitles</option>
+          </select>
+        </div>
+        <button id="debug-toggle" class="debug-btn">Debug</button>
       </div>
       <div class="video-container w-[90%] h-[85vh] mx-auto">
         <div class="rounded-md border shadow-sm relative dark:border-gray-700">
-          <div
+          <!-- <div
             id="no-video-selected"
             class="grid place-content-center absolute inset-0 z-10"
           >
@@ -61,7 +67,7 @@
                 Upload a video to start watching
               </h1>
             </label>
-          </div>
+          </div> -->
           <video id="video" class="w-full" style="display: hidden">
             <source type="video/*" />
             <track
@@ -73,6 +79,10 @@
           </video>
           <div id="custom-captions" class="custom-captions-container"></div>
         </div>
+      </div>
+      <div id="debug-panel" class="debug-panel hidden">
+        <h3>Debug Information</h3>
+        <pre id="debug-output"></pre>
       </div>
       <script type="module" src="src/main.ts"></script>
     </main>
