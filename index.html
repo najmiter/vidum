@@ -5,12 +5,12 @@
     <title>vidum - Online Free Video Player</title>
     <link rel="icon" type="image/x-icon" href="/icon.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!-- <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap"
       rel="stylesheet"
-    /> -->
+    />
   </head>
   <body
     class="w-full h-screen p-4 selection:bg-indigo-500 selection:text-white dark:bg-[#12091b]"
@@ -29,8 +29,12 @@
         >
         <input hidden type="file" id="subtitle-input" accept=".srt" />
       </div>
-      <div class="video-container w-[90%] h-[85vh] mx-auto">
-        <div class="rounded-md border shadow-sm relative dark:border-gray-700">
+      <div
+        class="video-container w-[90%] h-[85vh] flex justify-center items-center mx-auto"
+      >
+        <div
+          class="rounded-md border object-contain h-full flex justify-center items-center bg-black w-full shadow-sm relative dark:border-gray-700"
+        >
           <div
             id="no-video-selected"
             class="grid place-content-center absolute inset-0 z-10"
@@ -59,7 +63,11 @@
               </h1>
             </label>
           </div>
-          <video id="video" class="w-full" style="display: hidden">
+          <video
+            id="video"
+            class="w-full object-contain"
+            style="display: hidden"
+          >
             <source type="video/*" />
             <track
               srclang="en"
@@ -71,10 +79,7 @@
           <div id="custom-captions" class="custom-captions-container"></div>
         </div>
       </div>
-      <div id="debug-panel" class="debug-panel hidden">
-        <h3>Debug Information</h3>
-        <pre id="debug-output"></pre>
-      </div>
+
       <script type="module" src="src/main.ts"></script>
     </main>
   </body>
